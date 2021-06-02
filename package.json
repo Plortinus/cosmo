@@ -1,7 +1,7 @@
 {
   "name": "cosmo-wc",
   "description": "a shareable web components library with Svelte",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "keywords": [
@@ -9,6 +9,10 @@
     "web-components",
     "library"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Plortinus/cosmo.git"
+  },
   "scripts": {
     "build": "rollup -c",
     "build:demo": "rollup -c rollup.demo.config.js",
@@ -17,16 +21,16 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.1.0",
-    "rollup": "^2.0.0",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "rollup": "^2.50.5",
     "rollup-plugin-bundle-size": "^1.0.3",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
-    "rollup-plugin-svelte": "^7.0.0",
-    "rollup-plugin-terser": "^7.0.0",
-    "sirv-cli": "^1.0.0",
-    "svelte": "^3.0.0"
+    "rollup-plugin-svelte": "^7.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "sirv-cli": "^1.0.12",
+    "svelte": "^3.38.2"
   },
   "files": [
     "dist"
