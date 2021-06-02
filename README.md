@@ -1,4 +1,4 @@
-# svelte-web-components-template
+# cosmo web components library
 
 
 [![npm](https://img.shields.io/npm/v/cosmo-wc.svg)](https://www.npmjs.com/package/cosmo-wc) [![npm](https://img.shields.io/npm/dt/cosmo-wc.svg)](https://www.npmjs.com/package/cosmo-wc)
