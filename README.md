@@ -1,6 +1,7 @@
 # svelte-web-components-template
 
-> A base template for building a shareable web components library with [Svelte](https://svelte.dev).
+
+[![npm](https://img.shields.io/npm/v/cosmo-wc.svg)](https://www.npmjs.com/package/cosmo-wc) [![npm](https://img.shields.io/npm/dt/cosmo-wc.svg)](https://www.npmjs.com/package/cosmo-wc)
 
 ## How to use this template
 
