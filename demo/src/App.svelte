@@ -1,14 +1,16 @@
 <script>
   import '../../lib';
-  export let name;
+  const handleTest = params => {
+    console.log('params: ', params);
+    // alert(params)
+  }
 </script>
 
 <main>
-  <h1>Hello {name}!</h1>
-  <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-
   <div class="container">
-    <my-component></my-component>
+    <cosmo-button on:test={handleTest}>默认按钮</cosmo-button>
+    <cosmo-button type="primary">主要按钮</cosmo-button>
+    <cosmo-button type="danger">危险按钮</cosmo-button>
   </div>
 </main>
 
