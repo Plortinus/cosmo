@@ -1,7 +1,7 @@
 {
   "name": "cosmo-wc",
   "description": "a shareable web components library with Svelte",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "keywords": [
