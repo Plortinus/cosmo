@@ -13,4 +13,9 @@ module.exports = {
     }
   }),
   // ...other svelte options
+  compilerOptions: {
+    // enable run-time checks when not in production
+    dev: !production,
+    customElement: true
+  }
 };
