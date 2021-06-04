@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import bundleSize from 'rollup-plugin-bundle-size';
 import pkg from './package.json';
+import sveltePreprocess from 'svelte-preprocess';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -19,6 +20,16 @@ export default {
   ],
   plugins: [
     svelte({
+      preprocess: sveltePreprocess({
+        sourceMap: !production,
+        defaults: {
+          style: 'less'
+        },
+        less: {},
+        postcss: {
+          plugins: [require('autoprefixer')()]
+        }
+      }),
       // compile only *.wc.svelte files as web components
       include: /\.wc\.svelte$/,
       compilerOptions: {
@@ -28,6 +39,16 @@ export default {
       }
     }),
     svelte({
+      preprocess: sveltePreprocess({
+        sourceMap: !production,
+        defaults: {
+          style: 'less'
+        },
+        less: {},
+        postcss: {
+          plugins: [require('autoprefixer')()]
+        }
+      }),
       exclude: /\.wc\.svelte$/,
       compilerOptions: {
         // enable run-time checks when not in production

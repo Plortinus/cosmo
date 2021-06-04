@@ -20,9 +20,17 @@
 </script>
 
 <button class={`ant-btn ant-btn-${type}`} on:click={() => dispatchEvent("test", "Hello!")}>
+  <span>xxxxx</span>
   <slot>按钮默认文字</slot>
 </button>
 
-<style>
-  @import url('https://unpkg.com/antd@4.16.1/dist/antd.css')
+<style lang="less">
+  .ant-btn{
+    width: 200px;
+    height: 50px;
+    
+    span{
+      color: red;
+    }
+  }
 </style>
