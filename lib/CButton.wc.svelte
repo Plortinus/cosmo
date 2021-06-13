@@ -1,36 +1,48 @@
 <svelte:options tag="cosmo-button"/>
 
 <script>
-  export let type = ''
-  export let ghost = false
-
+  // 属性参考:　https://sveltematerialui.com/demo/button/
+  import Button, { Label, Icon  } from '@smui/button';
   import { get_current_component } from "svelte/internal";
   
   const component = get_current_component();
-  console.log('component: ', component);
   
   // example function for dispatching events
   const dispatchEvent = (name, detail) => {
-    console.log('name: ', name);
     component?.dispatchEvent(new CustomEvent(name, {
       detail,
       composed: true  // propagate across the shadow DOM
     }));
   };
+
+  export let disabled = false
+  export let ripple = true
+  export let variant = 'outlined'
+  export let className = ''
+  export let color = ''
+  export let href = null
+  export let target = '_blank'
+
+  function toParent () {
+    console.log('toParent: ');
+    dispatchEvent("click", "Hello!")
+  }
 </script>
 
-<button class={`ant-btn ant-btn-${type}`} on:click={() => dispatchEvent("test", "Hello!")}>
-  <span>xxxxx</span>
-  <slot>按钮默认文字</slot>
-</button>
+<Button
+  on:click={toParent}
+  disabled={disabled}
+  ripple={ripple}
+  variant={variant}
+  color={color}
+  class={className}
+  href={href}
+  target={target}>
+  <Label>
+    <slot />
+  </Label>
+</Button>
 
-<style lang="less">
-  .ant-btn{
-    width: 200px;
-    height: 50px;
-    
-    span{
-      color: red;
-    }
-  }
+<style>
+  @import url('https://unpkg.com/svelte-material-ui/bare.css')
 </style>

@@ -1,7 +1,7 @@
 {
   "name": "cosmo-wc",
   "description": "a shareable web components library with Svelte",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "keywords": [
@@ -23,18 +23,21 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
+    "@smui/button": "^4.2.0",
     "autoprefixer": "^10.2.6",
     "eslint": "^7.27.0",
     "eslint-plugin-svelte3": "^3.2.0",
-    "less": "^4.1.1",
     "postcss": "^8.3.0",
     "rollup": "^2.50.5",
     "rollup-plugin-bundle-size": "^1.0.3",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.34.1",
     "sirv-cli": "^1.0.12",
+    "smui-theme": "^4.2.0",
     "svelte": "^3.38.2",
     "svelte-preprocess": "^4.7.3"
   },

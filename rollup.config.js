@@ -23,9 +23,9 @@ export default {
       preprocess: sveltePreprocess({
         sourceMap: !production,
         defaults: {
-          style: 'less'
+          style: 'scss'
         },
-        less: {},
+        scss: {},
         postcss: {
           plugins: [require('autoprefixer')()]
         }
@@ -42,9 +42,9 @@ export default {
       preprocess: sveltePreprocess({
         sourceMap: !production,
         defaults: {
-          style: 'less'
+          style: 'scss'
         },
-        less: {},
+        scss: {},
         postcss: {
           plugins: [require('autoprefixer')()]
         }
