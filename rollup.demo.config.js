@@ -4,7 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
-import postcss from "rollup-plugin-postcss";
+import sveltePreprocess from 'svelte-preprocess'
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -39,6 +39,19 @@ export default {
   },
   plugins: [
     svelte({
+      preprocess: sveltePreprocess({
+        sourceMap: !production,
+        defaults: {
+          style: 'less'
+        },
+        less: {},
+        postcss: {
+          plugins: [require('autoprefixer')()]
+        },
+        css: css => {
+          css.write('bundle.css')
+        },
+      }),
       // compile only *.wc.svelte files as web components
       include: /\.wc\.svelte$/,
       compilerOptions: {
@@ -54,22 +67,9 @@ export default {
         dev: !production
       }
     }),
-    postcss({
-      extract: true,
-      minimize: true,
-      use: [
-        [
-          'sass',
-          {
-            includePaths: ['./src/theme', './node_modules'],
-          },
-        ],
-      ],
-    }),
     // we'll extract any component CSS out into
     // a separate file - better for performance
-    css({ output: 'bundle.css' }),
-
+    // css({ output: 'bundle.css' }),
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
     // some cases you'll need additional configuration -
